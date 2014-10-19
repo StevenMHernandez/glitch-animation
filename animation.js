@@ -45,6 +45,7 @@ function tone() {
     tonePer = width / toneF;
     toneGen();
 }
+
 function toneGen() {
     //ctx.fillStyle = "#000000";
     //ctx.fillRect(0, 0, width, height);
