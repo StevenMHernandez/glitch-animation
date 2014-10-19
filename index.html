@@ -23,29 +23,30 @@
     width = canvas.width;
     height = canvas.height;
     var ctx = canvas.getContext('2d');
-    ctx.drawImage(img, 0, 0, width, height);
-
-    redCyan();
-    //    tone();
-    var interval = 0;
-    theInterval = setInterval(function () {
-        console.log(interval);
-        tone();
-        redCyan();
-        if (interval > 18 && interval < 27) {
-            text('nothing');
-        }
-        if (interval > 54 && interval < 72) {
-            text('something');
-        }
-        if (interval > 90 && interval < 108) {
-            text('end_stream');
-        }
-//        if (interval == 360) {
-//            clearInterval(theInterval);
-//        }
-        interval++;
-    }, 90);
+    $('img')[0].load(
+            function () {
+                ctx.drawImage(img, 0, 0, width, height);
+                redCyan();
+                var interval = 0;
+                theInterval = setInterval(function () {
+                    console.log(interval);
+                    tone();
+                    redCyan();
+                    if (interval > 18 && interval < 27) {
+                        text('nothing');
+                    }
+                    if (interval > 54 && interval < 72) {
+                        text('something');
+                    }
+                    if (interval > 90 && interval < 108) {
+                        text('end_stream');
+                    }
+//                    if (interval == 360) {
+//                        clearInterval(theInterval);
+//                    }
+                    interval++;
+                }, 90);
+            })
 </script>
 </body>
 </html>
