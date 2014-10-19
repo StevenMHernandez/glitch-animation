@@ -39,7 +39,7 @@ function tone() {
     }
     toneA = Math.round(Math.random() * 90);
     toneXa = width;
-    toneF = Math.round(Math.random() * 1) + 1;
+    toneF = Math.round(Math.random()) + 1;
     toneP = Math.round(Math.random() * 100);
     tonePer = width / toneF;
     toneGen();
