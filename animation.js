@@ -1,33 +1,41 @@
 function redCyan() {
-    //var ctx = canvas.getContext('2d');
-    //var canvasData = ctx.getImageData(0, 0, width, height);
-    //for (var i = 0; i < canvasData.data.length; i += 4) {
-    //    var red = canvasData.data[i];
-    //    var cyan = (canvasData.data[i + 1] + canvasData.data[i + 2]) * 2;
-    //    if (red > cyan) {
-    //        canvasData.data[i] = 255;
-    //        canvasData.data[i + 1] = 0;
-    //        canvasData.data[i + 2] = 0;
-    //    }
-    //    else if (red < cyan) {
-    //        canvasData.data[i] = 0;
-    //        canvasData.data[i + 1] = 255;
-    //        canvasData.data[i + 2] = 255;
-    //    }
-    //    else {
-    //        canvasData.data[i] = 255;
-    //        canvasData.data[i + 1] = 255;
-    //        canvasData.data[i + 2] = 255;
-    //    }
-    //}
-    //ctx.putImageData(canvasData, 0, 0);
+    var ctx = canvas.getContext('2d');
+    var canvasData = ctx.getImageData(0, 0, width, height);
+    for (var i = 0; i < canvasData.data.length; i += 4) {
+        var red = canvasData.data[i];
+        var cyan = (canvasData.data[i + 1] + canvasData.data[i + 2]) / 2;
+        if (red > cyan) {
+            canvasData.data[i] = 255;
+            canvasData.data[i + 1] = 0;
+            canvasData.data[i + 2] = 0;
+        }
+        else if (red < cyan) {
+            canvasData.data[i] = 0;
+            canvasData.data[i + 1] = 255;
+            canvasData.data[i + 2] = 255;
+        }
+        else if (red <= 100) {
+            canvasData.data[i] = 0;
+            canvasData.data[i + 1] = 0;
+            canvasData.data[i + 2] = 0;
+        }
+        else {
+            canvasData.data[i] = 255;
+            canvasData.data[i + 1] = 255;
+            canvasData.data[i + 2] = 255;
+        }
+    }
+    ctx.putImageData(canvasData, 0, 0);
 }
 
 function text(str) {
     ctx.font = "500 63px Raleway";
-    ctx.fillStyle = '#ff0000';
-    if (Math.round(Math.random())) {
-        ctx.fillStyle = '#00ffff';
+    ctx.fillStyle = '#000';
+    if (Math.round(Math.random() * 2) != 0) {
+        ctx.fillStyle = '#ff0000';
+        if (Math.round(Math.random())) {
+            ctx.fillStyle = '#00ffff';
+        }
     }
     ctx.fillText(str, 30, 90);
 }
@@ -40,14 +48,12 @@ function tone() {
     toneA = Math.round(Math.random() * 90);
     toneXa = width;
     toneF = Math.round(Math.random()) + 1;
-    toneP = Math.round(Math.random() * 100);
+    toneP = Math.round(Math.random() * 90);
     tonePer = width / toneF;
     toneGen();
 }
 
 function toneGen() {
-    //ctx.fillStyle = "#000000";
-    //ctx.fillRect(0, 0, width, height);
     if (toneX == 'X') {
         for (var i = 0; i < width; i++) {
             var t = i - toneP;

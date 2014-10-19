@@ -14,41 +14,42 @@
 <canvas id="canvas"></canvas>
 
 <!--<span id="span">-->
-    <!--<img src="image_1.jpg"/>-->
+<!--<img src="image_2.jpg"/>-->
 <!--</span>-->
 
 <script>
-    var img = new Image();
-//    img.src = $('img')[0].src;
-//    canvas = $('#canvas')[0];
+    //    var img = new Image();
+    //    img.src = $('img')[0].src;
+    canvas = $('#canvas')[0];
     width = canvas.width;
     height = canvas.height;
     var ctx = canvas.getContext('2d');
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, width, height);
-//    $(window).load(function () {
-//        ctx.drawImage(img, 0, 0, width, height);
-        redCyan();
-        var interval = 0;
-        theInterval = setInterval(function () {
-            console.log(interval);
-            tone();
-            redCyan();
-            if (interval > 0 && interval < 9) {
-                text('begin');
-            }
-            if (interval > 36 && interval < 45) {
-                text('middle');
-            }
-            if (interval > 90 && interval < 108) {
-                text('end_stream');
-            }
-//                    if (interval == 360) {
-//                        clearInterval(theInterval);
-//                    }
-            interval++;
-        }, 90);
-//    });
+    //    $(window).load(function () {
+    //        ctx.drawImage(img, 0, 0, width, height);
+    var interval = 0;
+    theInterval = setInterval(function () {
+        console.log(interval);
+        tone();
+        if ((interval % 9) == 0) {
+            text('|||||||||');
+        }
+        if ((interval % 8) == 0) {
+            text('::::::::');
+        }
+        if ((interval % 7) == 0) {
+            text('///////');
+        }
+        interval++;
+    }, 90);
+    thisInterval = setInterval(function () {
+        text('60');
+        alert('60 seconds');
+        clearInterval(thisInterval);
+//        clearInterval(theInterval);
+    }, 60000);
+    //    });
 </script>
 </body>
 </html>
