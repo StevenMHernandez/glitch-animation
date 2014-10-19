@@ -3,6 +3,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background: #000;
 }
 
 canvas {
@@ -27,7 +28,7 @@ canvas {
     -ms-interpolation-mode: nearest-neighbor; /* IE8+           */
 }
 
-img{
-    margin:0 auto;
-    display:block;
+img {
+    margin: 0 auto;
+    display: block;
 }
