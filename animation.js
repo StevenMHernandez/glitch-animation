@@ -1,26 +1,26 @@
 function redCyan() {
-    var ctx = canvas.getContext('2d');
-    var canvasData = ctx.getImageData(0, 0, width, height);
-    for (var i = 0; i < canvasData.data.length; i += 4) {
-        var red = canvasData.data[i];
-        var cyan = (canvasData.data[i + 1] + canvasData.data[i + 2]) * 2;
-        if (red > cyan) {
-            canvasData.data[i] = 255;
-            canvasData.data[i + 1] = 0;
-            canvasData.data[i + 2] = 0;
-        }
-        else if (red < cyan) {
-            canvasData.data[i] = 0;
-            canvasData.data[i + 1] = 255;
-            canvasData.data[i + 2] = 255;
-        }
-        else {
-            canvasData.data[i] = 255;
-            canvasData.data[i + 1] = 255;
-            canvasData.data[i + 2] = 255;
-        }
-    }
-    ctx.putImageData(canvasData, 0, 0);
+    //var ctx = canvas.getContext('2d');
+    //var canvasData = ctx.getImageData(0, 0, width, height);
+    //for (var i = 0; i < canvasData.data.length; i += 4) {
+    //    var red = canvasData.data[i];
+    //    var cyan = (canvasData.data[i + 1] + canvasData.data[i + 2]) * 2;
+    //    if (red > cyan) {
+    //        canvasData.data[i] = 255;
+    //        canvasData.data[i + 1] = 0;
+    //        canvasData.data[i + 2] = 0;
+    //    }
+    //    else if (red < cyan) {
+    //        canvasData.data[i] = 0;
+    //        canvasData.data[i + 1] = 255;
+    //        canvasData.data[i + 2] = 255;
+    //    }
+    //    else {
+    //        canvasData.data[i] = 255;
+    //        canvasData.data[i + 1] = 255;
+    //        canvasData.data[i + 2] = 255;
+    //    }
+    //}
+    //ctx.putImageData(canvasData, 0, 0);
 }
 
 function text(str) {
