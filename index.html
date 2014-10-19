@@ -13,19 +13,21 @@
 <body>
 <canvas id="canvas"></canvas>
 
-<span id="span">
-    <img src="image_1.jpg"/>
-</span>
+<!--<span id="span">-->
+    <!--<img src="image_1.jpg"/>-->
+<!--</span>-->
 
 <script>
     var img = new Image();
-    img.src = $('img')[0].src;
-    canvas = $('#canvas')[0];
+//    img.src = $('img')[0].src;
+//    canvas = $('#canvas')[0];
     width = canvas.width;
     height = canvas.height;
     var ctx = canvas.getContext('2d');
-    $(window).load(function () {
-        ctx.drawImage(img, 0, 0, width, height);
+    ctx.fillStyle = "#000000";
+    ctx.fillRect(0, 0, width, height);
+//    $(window).load(function () {
+//        ctx.drawImage(img, 0, 0, width, height);
         redCyan();
         var interval = 0;
         theInterval = setInterval(function () {
@@ -46,7 +48,7 @@
 //                    }
             interval++;
         }, 90);
-    });
+//    });
 </script>
 </body>
 </html>
