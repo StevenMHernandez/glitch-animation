@@ -14,42 +14,54 @@
 <canvas id="canvas"></canvas>
 
 <!--<span id="span">-->
-<!--<img src="image_2.jpg"/>-->
+<!--<img src="image_1.jpg"/>-->
 <!--</span>-->
 
+
+<!--<video id="video1" controls width="1" autoplay>-->
+    <!--<source src="https://r2---sn-8xgp1vo-2ias.googlevideo.com/videoplayback?source=youtube&ip=173.67.253.28&itag=43&key=yt5&mime=video%2Fwebm&mt=1413760070&mv=m&signature=1BBE87D28D74966EB7B31A9D3C8E39D16D8B6BE4.132FC1752CE4CD469D23EEB0A9BCC3639F33DEAD&fexp=924639%2C927622%2C930666%2C930672%2C931346%2C931983%2C932404%2C934030%2C945252%2C946023%2C947209%2C948703%2C952302%2C954804&ms=au&mm=31&id=o-AJTVAEfj3PZzsuMuGfUCA_nieXTC_fkqBFgviDTFOoc_&requiressl=yes&sparams=id%2Cinitcwndbps%2Cip%2Cipbits%2Citag%2Cmime%2Cmm%2Cms%2Cmv%2Cratebypass%2Crequiressl%2Csource%2Cupn%2Cexpire&ipbits=0&upn=NtVUJxBgJ5w&expire=1413781750&sver=3&ratebypass=yes&initcwndbps=1753750&cpn=Ym-Tpa7Nc_gaI9s9&ptk=youtube_none&pltype=contentugc&c=WEB&cver=html5" type='video/webm'>-->
+<!--</video>-->
+
 <script>
-    //    var img = new Image();
-    //    img.src = $('img')[0].src;
+//        var img = new Image();
+//        img.src = $('img')[0].src;
     canvas = $('#canvas')[0];
     width = canvas.width;
     height = canvas.height;
     var ctx = canvas.getContext('2d');
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, width, height);
-    //    $(window).load(function () {
-    //        ctx.drawImage(img, 0, 0, width, height);
+        $(window).load(function () {
+//            ctx.drawImage(img, 0, 0, width, height);
     var interval = 0;
     theInterval = setInterval(function () {
-        console.log(interval);
+
+//        var v=document.getElementById("video1");
+//        ctx.drawImage(v,50,50,200,50);
+
         tone();
+//        if ((interval % 9) == 0) {
+//            redCyan();
+//        }
         if ((interval % 9) == 0) {
-            text('|||||||||');
+            text(interval);
         }
         if ((interval % 8) == 0) {
-            text('::::::::');
+            text(interval);
         }
         if ((interval % 7) == 0) {
-            text('///////');
+            text(interval);
         }
         interval++;
-    }, 90);
+    },1);
     thisInterval = setInterval(function () {
         text('60');
-        alert('60 seconds');
         clearInterval(thisInterval);
 //        clearInterval(theInterval);
     }, 60000);
-    //    });
+        });
 </script>
 </body>
 </html>
+
+http://fiddle.jshell.net/stevenHernandez/s3dcmt7v/5/show/
