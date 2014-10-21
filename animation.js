@@ -29,7 +29,7 @@ function redCyan() {
 }
 
 function text(str) {
-    ctx.font = "500 63px Raleway";
+    ctx.font = "500 18px Raleway";
     ctx.fillStyle = '#000';
     if (Math.round(Math.random() * 2) != 0) {
         ctx.fillStyle = '#ff0000';

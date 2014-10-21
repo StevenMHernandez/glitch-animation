@@ -43,17 +43,14 @@
 //        if ((interval % 9) == 0) {
 //            redCyan();
 //        }
-        if ((interval % 9) == 0) {
-            text(interval);
+        if (interval < 9) {
+            text('I love you too!');
         }
-        if ((interval % 8) == 0) {
-            text(interval);
-        }
-        if ((interval % 7) == 0) {
-            text(interval);
+        if (interval > 9 && interval < 18) {
+            text('You are awesome!');
         }
         interval++;
-    },1);
+    },270);
     thisInterval = setInterval(function () {
         text('60');
         clearInterval(thisInterval);
@@ -64,4 +61,4 @@
 </body>
 </html>
 
-http://fiddle.jshell.net/stevenHernandez/s3dcmt7v/5/show/
+<!--http://fiddle.jshell.net/stevenHernandez/s3dcmt7v/5/show/-->
