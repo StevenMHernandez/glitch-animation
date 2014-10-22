@@ -40,11 +40,14 @@
 //        ctx.drawImage(v,50,50,200,50);
 
             tone();
+            if (interval < 9) {
+                text('|||||||||');
+            }
             if ((interval % 9) == 0) {
-                text(interval);
+                text('/////////');
             }
             if ((interval % 8) == 0) {
-                text(interval);
+                text('|||||||||');
             }
 //            if (interval < 9) {
 //                text('I love you too!');
@@ -53,7 +56,7 @@
 //                text('You are awesome!');
 //            }
             interval++;
-        }, 180);
+        }, 108);
         thisInterval = setInterval(function () {
             text('60');
             clearInterval(thisInterval);
