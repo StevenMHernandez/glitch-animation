@@ -41,16 +41,19 @@
 
             tone();
             if ((interval % 9) == 0) {
-                text('I love you!');
+                text(interval);
             }
-            if (interval < 9) {
-                text('I love you too!');
+            if ((interval % 8) == 0) {
+                text(interval);
             }
-            if (interval > 9 && interval < 18) {
-                text('You are awesome!');
-            }
+//            if (interval < 9) {
+//                text('I love you too!');
+//            }
+//            if (interval > 9 && interval < 18) {
+//                text('You are awesome!');
+//            }
             interval++;
-        }, 270);
+        }, 180);
         thisInterval = setInterval(function () {
             text('60');
             clearInterval(thisInterval);
