@@ -26,7 +26,7 @@
     ctx.fillRect(0, 0, width, height);
     $(window).load(function () {
         var interval = 0;
-        theInterval = setInterval(function () {
+        var mainInterval = setInterval(function () {
             tone();
             if (interval < 9) {
                 text('|||||||||');
@@ -39,7 +39,7 @@
             }
             interval++;
         }, 108);
-        thisInterval = setInterval(function () {
+        var thisInterval = setInterval(function () {
             text('60');
             clearInterval(thisInterval);
         }, 60000);
