@@ -24,6 +24,9 @@
     width = canvas.width;
     height = canvas.height;
     var ctx = canvas.getContext('2d');
+    ctx.imageSmoothingEnabled = false;
+    ctx.webkitImageSmoothingEnabled = false;
+    ctx.mozImageSmoothingEnabled = false;
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, width, height);
     $(window).load(function () {
