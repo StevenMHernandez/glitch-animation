@@ -17,6 +17,8 @@
 <!--<img src="image_1.jpg"/>-->
 <!--</span>-->
 
+<a href="mailto:glitch.img@gmail.com">Hello.</a>
+
 <script>
     canvas = $('#canvas')[0];
     width = canvas.width;
@@ -33,6 +35,10 @@
             tone();
             if (interval < 9) {
                 text('|||||||||');
+            }
+            if (interval < 27) {
+                date = new Date();
+                text(date.getDate() + ' ' + date.getMonth() + ' ' + date.getFullYear(), null, '16.2', '18');
             }
             if ((interval % 9) == 0) {
                 text('/////////');
