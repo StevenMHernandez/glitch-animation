@@ -17,6 +17,8 @@
 <!--<img src="image_1.jpg"/>-->
 <!--</span>-->
 
+<a href="mailto:glitch.img@gmail.com">Hello.</a>
+
 <script>
     canvas = $('#canvas')[0];
     width = canvas.width;
@@ -26,10 +28,14 @@
     ctx.fillRect(0, 0, width, height);
     $(window).load(function () {
         var interval = 0;
-        theInterval = setInterval(function () {
+        var mainInterval = setInterval(function () {
             tone();
             if (interval < 9) {
                 text('|||||||||');
+            }
+            if (interval < 27) {
+                date = new Date();
+                text(date.getDate() + ' ' + date.getMonth() + ' ' + date.getFullYear(), null, '16.2', '18');
             }
             if ((interval % 9) == 0) {
                 text('/////////');
@@ -39,7 +45,7 @@
             }
             interval++;
         }, 108);
-        thisInterval = setInterval(function () {
+        var thisInterval = setInterval(function () {
             text('60');
             clearInterval(thisInterval);
         }, 60000);

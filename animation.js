@@ -28,16 +28,23 @@ function redCyan() {
     ctx.putImageData(canvasData, 0, 0);
 }
 
-function text(str) {
-    ctx.font = "500 63px Raleway";
-    ctx.fillStyle = '#000';
-    if (Math.round(Math.random() * 2) != 0) {
-        ctx.fillStyle = '#ff0000';
-        if (Math.round(Math.random())) {
-            ctx.fillStyle = '#00ffff';
+function text(str, textColor, fontSize, top) {
+    top = top || 90;
+    fontSize = fontSize || 63;
+    ctx.font = "500 " + fontSize + "px Arial";
+    if(textColor) {
+        ctx.fillStyle = textColor;
+    }
+    else{
+        ctx.fillStyle = '#000';
+        if (Math.round(Math.random() * 2) != 0) {
+            ctx.fillStyle = '#ff0000';
+            if (Math.round(Math.random())) {
+                ctx.fillStyle = '#00ffff';
+            }
         }
     }
-    ctx.fillText(str, 30, 90);
+    ctx.fillText(str, 0, top);
 }
 
 function tone() {
